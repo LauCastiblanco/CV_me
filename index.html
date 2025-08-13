@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV - Laura Katherine Castiblanco Velásquez</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <h1>Laura Katherine Castiblanco Velásquez</h1>
+    <nav>
+      <button class="hamburger" aria-label="Abrir menú" aria-controls="menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="menu" id="menu">
+        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="#perfil">Perfil</a></li>
+        <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#educacion">Educación</a></li>
+        <li><a href="#experiencia">Experiencia</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+<main>
+  <!-- Información Personal -->
+  <section id="informacion-personal" class="info-personal">
+    <img src="images/LKCV.jpg" alt="Foto de Laura Castiblanco" class="foto-redonda" />
+    <div class="datos-personales">
+      <h1>Laura Katherine Castiblanco Velásquez</h1>
+      <ul>
+        <li> <a href="mailto:lauracastiblanco38@gmail.com">lauracastiblanco38@gmail.com</a></li>
+        <li> <a href="tel:+573053908498">+57 305 390 8498</a></li>
+        <li> <a href="https://www.linkedin.com/in/laura-katherine-castiblanco-velasquez-2a3ba5232" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li> <a href="https://twitter.com/tu_usuario" target="_blank" rel="noopener">Twitter</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Perfil Profesional -->
+  <section id="perfil">
+    <h2>Perfil Profesional</h2>
+    <div class="perfil-contenedor">
+      <p>
+        Estudiante de noveno semestre de Ingeniería de Software en la Universidad Manuela Beltrán, con formación en desarrollo front y back-end y creación de apps móviles. He liderado y colaborado en proyectos académicos aplicando metodologías ágiles, buenas prácticas de codificación y conocimientos básicos en DevOps.
+      </p>
+    </div>
+  </section>
+
+  <!-- Sección de Skills -->
+  <section id="habilidades">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skills-col">
+        <h3>Skills Técnicos</h3>
+        <ul>
+          <li>Python</li>
+          <li>JavaScript</li>
+          <li>Java</li>
+          <li>React</li>
+        </ul>
+      </div>
+      <div class="skills-col">
+        <h3>Skills Blandos</h3>
+        <ul>
+          <li>Trabajo en equipo</li>
+          <li>Proactividad</li>
+          <li>Resolución de problemas</li>
+          <li>Comunicación efectiva</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!-- ...resto de secciones... -->
+</main>
+  <footer>
+    <p>&copy; 2024 Laura Katherine Castiblanco Velásquez. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    // Menú hamburguesa
+    const hamburger = document.querySelector('.hamburger');
+    const menu = document.querySelector('.menu');
+    hamburger.addEventListener('click', () => {
+      const isOpen = menu.classList.toggle('active');
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Animación al hacer scroll
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('section').forEach(sec => observer.observe(sec));
+  </script>
+</body>
+</html>
