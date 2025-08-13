@@ -1,0 +1,103 @@
+.info-personal {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+.info-personal .foto-redonda {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #2d3a4b;
+}
+.info-personal .datos-personales h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.7rem;
+  color: #2d3a4b;
+}
+.info-personal .datos-personales ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.info-personal .datos-personales ul li {
+  margin-bottom: 0.4rem;
+}
+.info-personal .datos-personales ul li a {
+  color: #1a2533;
+  text-decoration: none;
+}
+.info-personal .datos-personales ul li a:hover {
+  text-decoration: underline;
+}
+
+#habilidades {
+  background: #f8f9fa;
+  padding: 2rem 1rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+#habilidades h2 {
+  text-align: center;
+  color: #2d3a4b;
+  margin-bottom: 1.5rem;
+}
+#habilidades .skills-grid {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#habilidades .skills-col {
+  flex: 1 1 220px;
+  background: #e0e7ef;
+  border-radius: 8px;
+  padding: 1rem;
+  min-width: 220px;
+}
+#habilidades .skills-col h3 {
+  color: #1a2533;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+#habilidades .skills-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#habilidades .skills-col ul li {
+  background: #fff;
+  color: #2d3a4b;
+  margin-bottom: 0.7rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-weight: 500;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+#perfil {
+  margin-bottom: 2rem;
+}
+#perfil h2 {
+  color: #2d3a4b;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+#perfil .perfil-contenedor {
+  background: #e0e7ef;
+  border: 1.5px solid #b6c2d1;
+  border-radius: 8px;
+  padding: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+#perfil .perfil-contenedor p {
+  margin: 0;
+  color: #3a4a5d;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/*# sourceMappingURL=styles.css.map */
