@@ -1,1 +1,6 @@
-    
+    @use "variables" as *;
+
+/* Utilidades mínimas */
+.container { max-width: $container; margin: 0 auto; padding: 0 1rem; }
+.section  { padding-block: 1.5rem; }
+.muted    { color: $muted; }

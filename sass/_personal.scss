@@ -1,37 +1,19 @@
-.info-personal {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  margin-bottom: 2rem;
+@use "variables" as *;
 
-  .foto-redonda {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 3px solid #2d3a4b;
-  }
+/* Bloque Información personal */
+#informacion-personal {
+  h1 { margin: 0 0 .5rem; }
+  h2 { margin: .75rem 0 .25rem; }
+  p  { margin: .25rem 0; }
+}
 
-  .datos-personales {
-    h1 {
-      margin: 0 0 0.5rem 0;
-      font-size: 1.7rem;
-      color: #2d3a4b;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      li {
-        margin-bottom: 0.4rem;
-        a {
-          color: #1a2533;
-          text-decoration: none;
-          &:hover {
-            text-decoration: underline;
-          }
-        }
-      }
-    }
-  }
+/* Foto circular y tamaño controlado */
+.foto {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid $border;
+  display: block;
+  margin: .5rem 0 1rem;
 }

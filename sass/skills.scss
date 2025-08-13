@@ -1,50 +1,7 @@
-#habilidades {
-  background: #f8f9fa;
-  padding: 2rem 1rem;
-  border-radius: 10px;
-  margin-bottom: 2rem;
+@use "variables" as *;
 
-  h2 {
-    text-align: center;
-    color: #2d3a4b;
-    margin-bottom: 1.5rem;
-  }
-
-  .skills-grid {
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .skills-col {
-    flex: 1 1 220px;
-    background: #e0e7ef;
-    border-radius: 8px;
-    padding: 1rem;
-    min-width: 220px;
-
-    h3 {
-      color: #1a2533;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-
-      li {
-        background: #fff;
-        color: #2d3a4b;
-        margin-bottom: 0.7rem;
-        padding: 0.5rem 1rem;
-        border-radius: 5px;
-        font-weight: 500;
-        text-align: center;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.03);
-      }
-    }
-  }
+/* Listas de skills */
+#skills {
+  h3 { margin-top: 1rem; }
+  ul { margin: .5rem 0 1rem 1.25rem; }
 }
