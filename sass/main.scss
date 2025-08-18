@@ -1,18 +1,5 @@
 @use "variables" as *;
+@use "teaser";
 @use "personal";
 @use "skills";
-@use "teaser";
 
-/* Base mínima */
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 16px;
-  font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif;
-  color: $text;
-  background: $bg;
-}
-a { color: $brand; text-decoration: none; }
-a:hover { text-decoration: underline; }
-h1, h2, h3 { line-height: 1.2; }
-p { color: $text; }

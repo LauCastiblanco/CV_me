@@ -1,6 +1,118 @@
-    @use "variables" as *;
+@use "variables" as *;
 
-/* Utilidades mínimas */
-.container { max-width: $container; margin: 0 auto; padding: 0 1rem; }
-.section  { padding-block: 1.5rem; }
-.muted    { color: $muted; }
+/* Base */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: $text;
+  background:
+    radial-gradient(1200px 600px at 10% -20%, #083344, transparent 60%),
+    linear-gradient(180deg, #071220, $bg 60%);
+}
+a { color: $brand-2; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.container { max-width: $container; margin-inline: auto; padding: 1rem 1.25rem; }
+.section { padding-block: 1.25rem; scroll-margin-top: 96px; } /* evita que el sticky header tape el título */
+.section__title { margin: 0 0 .75rem; font-size: clamp(1.2rem, 1.5vw + 1rem, 1.6rem); }
+
+/* Header / nav */
+.topbar {
+  position: sticky; top: 0; z-index: 30;
+  background: rgba(7,12,24,.75);
+  border-bottom: 1px solid $border;
+  backdrop-filter: blur(8px);
+}
+.nav { display: flex; align-items: center; justify-content: space-between; }
+
+/* Logo (más grande) */
+.brand {
+  display: inline-grid; place-items: center;
+  width: 56px; height: 56px; border-radius: 14px;
+  color: #0b1220; font-weight: 800; letter-spacing: .3px;
+  background: linear-gradient(135deg, $brand, $brand-2);
+  box-shadow: 0 0 0 .35rem rgba(94,234,212,.14);
+}
+
+/* Botón hamburguesa */
+.hamburger {
+  width: 44px; height: 44px; border: 1px solid $border;
+  background: rgba(255,255,255,.04); color: $text; cursor: pointer;
+  border-radius: 12px; display: inline-grid; place-content: center; gap: 5px; padding: 0 8px;
+}
+.hamburger span { display: block; width: 22px; height: 2px; background: #fff; }
+
+/* Menú */
+.menu { list-style: none; margin: 0; padding: 0; display: none; }
+.menu li { margin: .25rem 0; }
+.menu a { color: $text; padding: .45rem .6rem; display: inline-block; border-radius: 10px; }
+.menu a:hover { background: rgba(255,255,255,.06); text-decoration: none; }
+.menu.is-open {
+  display: block; position: absolute; right: 1rem; top: 72px;
+  background: rgba(15,23,42,.98); border: 1px solid $border; border-radius: 16px; padding: .5rem;
+}
+
+@media (min-width: 768px) {
+  .hamburger { display: none; }
+  .menu { display: flex; gap: .5rem; position: static; }
+  .menu li { margin: 0; }
+}
+
+/* Hero (info-personal) */
+.hero {
+  display: grid; gap: 1.25rem; align-items: center;
+  grid-template-columns: 160px 1fr;
+}
+.avatar {
+  width: clamp(120px, 18vw, 180px);
+  height: clamp(120px, 18vw, 180px);
+  border-radius: 50%;
+  object-fit: cover; border: 2px solid $border;
+  box-shadow: $shadow;
+  background: linear-gradient(135deg, $brand, $brand-2);
+}
+.hero__txt h1 { margin: 0 0 .25rem; font-size: clamp(1.35rem, 2.4vw + 1rem, 2rem); }
+.contact-list { list-style: none; margin: .25rem 0 0; padding: 0; }
+.contact-list li { margin: .25rem 0; }
+
+@media (max-width: 720px) {
+  .hero { grid-template-columns: 110px 1fr; }
+}
+
+/* Cards & layout */
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  border: 1px solid $border; border-radius: $radius; padding: 1rem; box-shadow: $shadow;
+}
+.card--tone { border-color: rgba(34,211,238,.35); background: linear-gradient(180deg, rgba(34,211,238,.06), rgba(255,255,255,.02)); }
+
+.grid { display: grid; gap: 1rem; }
+.grid--2 { grid-template-columns: 1fr; }
+.grid--3 { grid-template-columns: 1fr; }
+@media (min-width: 720px) {
+  .grid--2 { grid-template-columns: repeat(2, 1fr); }
+  .grid--3 { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Timeline */
+.timeline { display: grid; gap: 1rem; }
+.t-item { display: grid; grid-template-columns: 20px 1fr; gap: .75rem; }
+.t-dot { width: 10px; height: 10px; border-radius: 50%; background: $brand-2; margin: .5rem 0 0 .2rem; box-shadow: 0 0 0 .25rem rgba(34,211,238,.2); }
+.t-card h3 { margin: 0 0 .25rem; font-size: 1.05rem; }
+.meta { color: $muted; font-size: .95rem; margin: 0 0 .5rem; }
+.bullets { margin: .25rem 0 0 1rem; }
+
+/* Pills y botones */
+.pill-list { display: flex; flex-wrap: wrap; gap: .5rem; padding-left: 0; list-style: none; }
+.pill-list li { background: rgba(255,255,255,.06); border: 1px solid $border; padding: .4rem .65rem; border-radius: 999px; }
+.btn { display: inline-block; font-weight: 600; padding: .5rem .8rem; border-radius: 10px; border: 1px solid $brand-2; }
+.btn:hover { text-decoration: none; background: rgba(34,211,238,.08); }
+
+/* Footer centrado */
+.footer { border-top: 1px solid $border; }
+.footer__in {
+  display: flex; align-items: center; justify-content: center;
+  padding-block: .75rem; text-align: center;
+}

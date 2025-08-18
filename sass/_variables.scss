@@ -1,6 +1,12 @@
-$bg: #ffffff;
-$text: #0f172a;
-$muted: #6b7280;
-$brand: #0ea5e9;
-$border: #e5e7eb;
-$container: 1000px;
+$bg: #0b1220;         // fondo base oscuro/limpio
+$surface: #0f172a;    // tarjetas
+$surface-2: #111827;  // variante
+$text: #e5e7eb;       // texto principal
+$muted: #a1a1aa;      // texto secundario
+$brand: #5eead4;      // menta
+$brand-2: #22d3ee;    // cian (degradado)
+$border: rgba(255,255,255,.09);
+$shadow: 0 10px 25px rgba(0,0,0,.35);
+$radius: 16px;
+$container: 1100px;
+$space: 1rem;

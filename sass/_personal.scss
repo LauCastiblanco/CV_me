@@ -1,19 +1,4 @@
 @use "variables" as *;
 
-/* Bloque Información personal */
-#informacion-personal {
-  h1 { margin: 0 0 .5rem; }
-  h2 { margin: .75rem 0 .25rem; }
-  p  { margin: .25rem 0; }
-}
-
-/* Foto circular y tamaño controlado */
-.foto {
-  width: 160px;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 2px solid $border;
-  display: block;
-  margin: .5rem 0 1rem;
-}
+#informacion-personal .links a { color: $text; }
+#informacion-personal .links a:hover { color: $brand-2; }
