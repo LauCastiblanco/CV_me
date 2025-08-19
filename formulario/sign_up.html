@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+   <!-- Responsive -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registro - Laura Castiblanco</title>
+  <!-- Estilos del formulario -->
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h2>Registro de Usuario</h2>
+
+    <!-- Desactiva la validación automática del navegador -->
+    <form id="registerForm" novalidate>
+
+      <!-- NOMBRE -->
+      <label>
+        Nombre completo:
+        <input type="text" name="nombre" required minlength="3" />
+        <!-- Exige al menos 3 letras -->
+        <span class="error"></span>
+      </label>
+
+      <!-- CORREO -->
+      <label>
+        Correo electrónico:
+        <!-- Verifica formato básico @ -->
+        <input type="email" name="email" required />
+        <span class="error"></span>
+      </label>
+
+      <!-- CONTRASEÑA -->
+      <label>
+        Contraseña:
+        <!-- pattern obliga a cumplir la regla de la contraseña-->
+        <input type="password" name="password" required pattern="(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}" />
+        <span class="error"></span>
+      </label>
+
+      <!-- CONFIRMA CONTRASEÑA -->
+      <label>
+        Confirmar contraseña:
+        <input type="password" name="confirmPassword" required />
+        <span class="error"></span>
+      </label>
+
+      <!-- FECHA DE NACIMIENTO -->
+      <label>
+        Fecha de nacimiento:
+        <input type="date" name="nacimiento" required />
+        <span class="error"></span>
+      </label>
+
+      <!-- NUMERO CELULAR COLOMBIA -->
+      <label>
+        Celular (Colombia):
+         <!-- Maximo 10 dígitos que empiecen con 3 -->
+        <input type="text" name="celular" required pattern="^3\d{9}$" />
+        <span class="error"></span>
+      </label>
+
+       <!-- TELÉFONO OPCIONAL -->
+      <label>
+        Teléfono (opcional):
+        <input type="text" name="telefono" pattern="\d{10,}" />
+        <span class="error"></span>
+      </label>
+
+      <!-- CHECKBOX TÉRMINOS -->
+      <label>
+        <input type="checkbox" name="terminos" required />
+        Acepto términos y condiciones
+        <span class="error"></span>
+      </label>
+
+      <!-- BOTÓN ENVIAR -->
+      <button type="submit" disabled>Enviar</button>
+      <!-- Si todo es válido se activa en boton "enviar" -->
+    </form>
+    <p id="successMsg" class="success hidden">¡Registro exitoso!</p>
+  </main>
+
+   <!-- JavaScript, validacion en tiempo real -->
+  <script src="assets/script.js"></script>
+</body>
+</html>

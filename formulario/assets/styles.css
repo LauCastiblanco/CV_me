@@ -1,0 +1,91 @@
+/* Variables para cambiar colores  */
+:root {
+  --bg: #111827;
+  --surface: #1f2937;
+  --lila: #c084fc;
+  --text: #f9fafb;
+  --error: #f87171;
+  --success: #34d399;
+}
+
+/* Estilos generales */
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 1rem;
+}
+
+/* Contenedor del formulario */
+.container {
+  background: var(--surface);
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Título */
+h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--lila);
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+/* Campos de entrada */
+input {
+  padding: 0.5rem;
+  border: 1px solid var(--lila);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text);
+}
+
+/* Borde rojo si hay error */
+input.invalid {
+  border-color: var(--error);
+}
+
+/* Mensaje de error debajo del campo */
+.error {
+  font-size: 0.8rem;
+  color: var(--error);
+  margin-top: 0.25rem;
+}
+
+/* Botón "Enviar" */
+button {
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--lila);
+  color: #111827;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Botón deshabilitado */
+button[disabled] {
+  background: var(--muted);
+  cursor: not-allowed;
+}
+
+.success {
+  text-align: center;
+  color: var(--success);
+  font-weight: bold;
+}
+
+.hidden { display: none; }
