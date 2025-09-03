@@ -1,4 +1,4 @@
-/* Variables para cambiar colores  */
+/* Cambiar colores  */
 :root {
   --bg: #111827;
   --surface: #1f2937;
@@ -58,11 +58,12 @@ input.invalid {
 }
 
 /* Mensaje de error debajo del campo */
-.error {
-  font-size: 0.8rem;
-  color: var(--error);
-  margin-top: 0.25rem;
-}
+.error { color: #f87171;
+   font-size: .85rem; 
+   margin-top: .25rem; 
+   min-height: 1em; }
+/* Borde rojo si hay error */
+input.invalid { border-color: #f87171; }
 
 /* Botón "Enviar" */
 button {

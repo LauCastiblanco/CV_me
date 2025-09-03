@@ -1,88 +1,86 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-   <!-- Responsive -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Registro - Laura Castiblanco</title>
-  <!-- Estilos del formulario -->
-  <link rel="stylesheet" href="assets/styles.css" />
+  
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Registro | Validación + reCAPTCHA</title>
+
+  <<link rel="stylesheet" href="/formulario/assets/styles.css">
+  <script src="/formulario/assets/script.js"></script>
+
 </head>
 <body>
-  <main class="container">
+  <div class="container">
     <h2>Registro de Usuario</h2>
 
-    <!-- Desactiva la validación automática del navegador -->
     <form id="registerForm" novalidate>
-
-      <!-- NOMBRE -->
       <label>
-        Nombre completo:
-        <input type="text" name="nombre" required minlength="3" />
-        <!-- Exige al menos 3 letras -->
+        Nombre completo
+        <input type="text" name="nombre" required />
         <span class="error"></span>
       </label>
 
-      <!-- CORREO -->
       <label>
-        Correo electrónico:
-        <!-- Verifica formato básico @ -->
+        Correo electrónico
         <input type="email" name="email" required />
         <span class="error"></span>
       </label>
 
-      <!-- CONTRASEÑA -->
       <label>
-        Contraseña:
-        <!-- pattern obliga a cumplir la regla de la contraseña-->
-        <input type="password" name="password" required pattern="(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}" />
+        Contraseña
+        <input type="password" name="password" required />
         <span class="error"></span>
       </label>
 
-      <!-- CONFIRMA CONTRASEÑA -->
       <label>
-        Confirmar contraseña:
+        Confirmar contraseña
         <input type="password" name="confirmPassword" required />
         <span class="error"></span>
       </label>
 
-      <!-- FECHA DE NACIMIENTO -->
       <label>
-        Fecha de nacimiento:
+        Fecha de nacimiento
         <input type="date" name="nacimiento" required />
         <span class="error"></span>
       </label>
 
-      <!-- NUMERO CELULAR COLOMBIA -->
       <label>
-        Celular (Colombia):
-         <!-- Maximo 10 dígitos que empiecen con 3 -->
-        <input type="text" name="celular" required pattern="^3\d{9}$" />
+        Celular (Colombia)
+        <input type="tel" name="celular" required placeholder="+57 3........" />
         <span class="error"></span>
       </label>
 
-       <!-- TELÉFONO OPCIONAL -->
       <label>
-        Teléfono (opcional):
-        <input type="text" name="telefono" pattern="\d{10,}" />
+        Teléfono (opcional)
+        <input type="tel" name="telefono" placeholder="7–10 dígitos" />
         <span class="error"></span>
       </label>
 
-      <!-- CHECKBOX TÉRMINOS -->
       <label>
         <input type="checkbox" name="terminos" required />
-        Acepto términos y condiciones
-        <span class="error"></span>
+        Acepto los términos y condiciones
       </label>
+      <span class="error"></span>
 
-      <!-- BOTÓN ENVIAR -->
-      <button type="submit" disabled>Enviar</button>
-      <!-- Si todo es válido se activa en boton "enviar" -->
+      <!-- reCAPTCHA v2 -->
+      <div class="captcha">
+        <div
+          class="g-recaptcha"
+          data-sitekey="6Lcq_bwrAAAAAEx4Sq4p1bOGU-1g67UBa8gUAuzh" 
+          data-callback="onReCaptchaSuccess"
+          data-expired-callback="onReCaptchaExpired"
+          data-theme="dark"></div>
+        <span id="captchaError" class="error"></span>
+      </div>
+
+      <button type="submit" disabled>Crear cuenta</button>
     </form>
-    <p id="successMsg" class="success hidden">¡Registro exitoso!</p>
-  </main>
 
-   <!-- JavaScript, validacion en tiempo real -->
-  <script src="assets/script.js"></script>
+    <p id="successMsg" class="success hidden"> Registro exitoso</p>
+  </div>
+
+  <!-- Script oficial de Google reCAPTCHA -->
+  <script src="https://www.google.com/recaptcha/api.js?hl=es-419" async defer></script>
 </body>
 </html>
